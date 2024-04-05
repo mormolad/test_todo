@@ -1,0 +1,50 @@
+.task {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 20px;
+  height: 64px;
+  width: 542px;
+  background-color: #848484;
+  margin: 20px auto;
+}
+
+.task__done {
+  background-color: #4bac44;
+}
+
+.task__content {
+  margin-left: 20px;
+  flex-grow: 1;
+  width: 370px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task__content_input {
+  width: 375px;
+}
+
+.task__button {
+  border: none;
+  justify-content: center;
+  max-height: 56px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  background-color: #84848400;
+}
+
+.task__button_delete {
+  background-image: url(../../images/trashSimple.svg);
+  margin-right: 20px;
+}
+.task__button_edit {
+  background-image: url(../../images/pencilSimple.svg);
+}
+
+.task__button_done {
+  background-image: url(../../images/done.svg);
+}
