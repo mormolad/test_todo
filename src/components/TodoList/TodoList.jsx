@@ -36,7 +36,6 @@ export default function TodoList() {
                 return task;
             })
         }
-        console.log(changeName(id))
         setTasks(changeName(id));
         localStorage.setItem('tasks', JSON.stringify(changeName(id)))
     }
@@ -44,18 +43,14 @@ export default function TodoList() {
 
 
     const setNewTaskRender = (newTask) => {
-        console.log(newTask)
         switch (stateSwitch) {
             case 'left':
-                console.log('l')
                 setTaskRender(checkStorage())
                 break;
             case 'center':
-                console.log('c')
                 setTaskRender(filterByCompleted(true))
                 break;
             case 'right':
-                console.log('r')
                 setTaskRender(filterByCompleted(false))
                 break
         }
