@@ -48,7 +48,7 @@ export default function TodoList() {
         switch (stateSwitch) {
             case 'left':
                 console.log('l')
-                setTaskRender(JSON.parse(localStorage.getItem('tasks')))
+                setTaskRender(checkStorage())
                 break;
             case 'center':
                 console.log('c')
@@ -77,19 +77,24 @@ export default function TodoList() {
         })
     }
 
+
     const filterByCompleted = (state) => {
-        return JSON.parse(localStorage.getItem('tasks')).filter(obj => obj.completed === state);
+        return checkStorage().filter(obj => obj.completed === state);
     };
 
     useEffect(() => {
-        setNewTaskRender()
+        setNewTaskRender(checkStorage())
     }, [stateSwitch])
 
+    const checkStorage = () => {
+        return localStorage.getItem('tasks') === null ? [] : JSON.parse(localStorage.getItem('tasks'))
+    }
 
 
     useEffect(() => {
-        setTaskRender(JSON.parse(localStorage.getItem('tasks')))
-        setTasks(JSON.parse(localStorage.getItem('tasks')))
+
+        setTaskRender(checkStorage())
+        setTasks(checkStorage())
 
     }, [])
 
